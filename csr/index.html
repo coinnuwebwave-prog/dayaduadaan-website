@@ -64,10 +64,16 @@ header{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--paper
 .brand-mark{width:46px;height:46px;flex:0 0 auto;object-fit:contain}
 .brand-name{font-family:var(--display);font-size:1.12rem;line-height:1.1}
 .brand-name span{display:block;font-family:var(--body);font-size:.66rem;letter-spacing:.16em;color:var(--ink-soft);text-transform:uppercase}
-nav.main{margin-left:auto;display:flex;gap:1.5rem}
-nav.main a{font-size:.94rem;color:var(--ink);text-decoration:none;padding-bottom:2px;border-bottom:1.5px solid transparent}
-nav.main a:hover{border-bottom-color:var(--marigold)}
-@media(max-width:900px){nav.main{display:none}}
+nav.main{margin-left:auto;display:flex;align-items:center;gap:.3rem}
+nav.main a{font-size:.8rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--peacock);text-decoration:none;padding:.5rem .85rem;border-radius:999px;border:1.5px solid transparent;transition:background .18s,color .18s,border-color .18s}
+nav.main a:hover{border-color:var(--marigold);color:var(--ink)}
+nav.main a[aria-current="page"]{background:var(--peacock);color:var(--paper);border-color:var(--peacock)}
+.menu-toggle{display:none;align-items:center;justify-content:center;width:42px;height:42px;flex:0 0 auto;padding:0;border:1.5px solid var(--rule);border-radius:8px;background:transparent;color:var(--ink);cursor:pointer}
+.menu-toggle svg{width:22px;height:22px}
+.menu-toggle .i-close{display:none}
+header.nav-open .menu-toggle .i-close{display:block}
+header.nav-open .menu-toggle .i-menu{display:none}
+@media(max-width:900px){.bar{gap:.55rem}.menu-toggle{display:inline-flex}nav.main{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:.35rem;background:var(--paper);border-bottom:1px solid var(--rule);padding:.8rem 4vw 1.1rem;box-shadow:0 18px 30px -18px rgba(0,0,0,.35)}header.nav-open nav.main{display:flex}nav.main a{font-size:.95rem;padding:.85rem 1rem;border-radius:8px;border-color:var(--rule)}.bar>.btn-give{padding:.5rem .95rem;font-size:.88rem}}
 .btn{display:inline-block;font-weight:600;font-size:.95rem;padding:.6rem 1.35rem;border:1.5px solid transparent;cursor:pointer;text-decoration:none;border-radius:2px;transition:background .18s,color .18s}
 .btn-give{background:var(--marigold);color:#241703}
 .btn-give:hover{background:var(--marigold-deep);color:#fff}
@@ -199,15 +205,16 @@ footer address{font-style:normal;color:var(--ink-soft);max-width:34ch}
       <img class="brand-mark" src="/assets/emblem.png" alt="" width="256" height="256" decoding="async">
       <span class="brand-name">Daya Dua Daan<span>Foundation</span></span>
     </a>
-    <nav class="main" aria-label="Primary">
+    <nav class="main" id="site-menu" aria-label="Primary">
       <a href="/programmes/">Our work</a>
       <a href="/about/">About</a>
       <a href="/transparency/">Transparency</a>
-      <a href="/csr/">CSR</a>
+      <a href="/csr/" aria-current="page">CSR</a>
       <a href="/contact/">Contact</a>
     </nav>
     <button class="theme-toggle" type="button" aria-label="Switch colour theme" title="Switch light / dark mode"><svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7Z"/></svg><svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg></button>
     <a class="btn btn-give" href="/donate/">Donate</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu"><svg class="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
   </div>
 </header>
 <main id="main"><section class="wrap">
@@ -271,13 +278,13 @@ footer address{font-style:normal;color:var(--ink-soft);max-width:34ch}
           <li><a href="/transparency/">Transparency</a></li>
           <li><a href="/contact/">Contact and volunteer</a></li>
           <li><a href="/terms/">Terms and conditions</a></li>
-          <li><a href="/cancellation-and-refund-policy/">Cancellation and refund policy</a></li>
+          <li><a href="/cancellation-and-refund-policy/">No refund &amp; cancellation policy</a></li>
         </ul>
       </div>
     </div>
     <div class="colophon">
       <span>© <span id="yr">2026</span> Daya Dua Daan Foundation · Section 8 company, CIN U88900MH2026NPL475133</span>
-      <span><a href="/terms/">Terms and conditions</a> · <a href="/cancellation-and-refund-policy/">Cancellation and refund policy</a> · <a href="/transparency/">Annual reports</a></span>
+      <span><a href="/terms/">Terms and conditions</a> · <a href="/cancellation-and-refund-policy/">No refund &amp; cancellation policy</a> · <a href="/transparency/">Annual reports</a></span>
     </div>
   </div>
 </footer>
@@ -287,4 +294,10 @@ function cur(){var t=r.getAttribute("data-theme");return t?t:(m.matches?"dark":"
 function label(){var d=cur()==="dark";b.setAttribute("aria-label",d?"Switch to light mode":"Switch to dark mode");b.setAttribute("aria-pressed",d?"true":"false");}
 b.addEventListener("click",function(){var n=cur()==="dark"?"light":"dark";r.setAttribute("data-theme",n);try{localStorage.setItem("ddd-theme",n);}catch(e){}label();});
 if(m.addEventListener)m.addEventListener("change",label);label();})();</script>
+<script>(function(){var h=document.querySelector("header"),b=document.querySelector(".menu-toggle");if(!h||!b)return;
+function set(o){h.classList.toggle("nav-open",o);b.setAttribute("aria-expanded",o?"true":"false");b.setAttribute("aria-label",o?"Close menu":"Open menu");}
+b.addEventListener("click",function(){set(!h.classList.contains("nav-open"));});
+document.querySelectorAll("#site-menu a").forEach(function(a){a.addEventListener("click",function(){set(false);});});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")set(false);});
+window.matchMedia("(min-width: 901px)").addEventListener("change",function(m){if(m.matches)set(false);});})();</script>
 </body></html>
