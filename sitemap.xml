@@ -33,4 +33,6 @@
   <url><loc>https://www.dayaduadaan.com/programmes/heritage-and-crafts/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.dayaduadaan.com/programmes/disaster-rescue-and-relief/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.dayaduadaan.com/programmes/antim-sanskar/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.dayaduadaan.com/terms/</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://www.dayaduadaan.com/cancellation-and-refund-policy/</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
 </urlset>
